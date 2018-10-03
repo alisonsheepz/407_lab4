@@ -60,10 +60,10 @@ def PartialPivot(A_in, v_in):
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     # Pivotting
     for m in range(N):
-        if A[m, m] == 0:
+        if A[m, m] == 0.:
             
             # The buffers to record the index and the max value
-            val_buff = 0
+            val_buff = 0.
             index_buff = 0
             
             for n in range(m + 1, N):
@@ -75,6 +75,7 @@ def PartialPivot(A_in, v_in):
             
             # Perform the row interchanging
             A[index_buff, :], A[m, :] = copy(A[m, :]), copy(A[index_buff, :])
+            v[index_buff, :], v[m, :] = copy(v[m, :]), copy(v[index_buff, :])
 
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     End of Q1a
