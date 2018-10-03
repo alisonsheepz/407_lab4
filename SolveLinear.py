@@ -55,16 +55,10 @@ def PartialPivot(A_in, v_in):
     A = copy(A_in)
     v = copy(v_in)
     N = len(v)
-    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     Q1a
-    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""    
-
-    # loop through the array rows, to see if the mth element of the mth row is 0
-        #if yes, loop the rows below it
-            # find the highest value of the mth element
-        # then swap with the row, also swap the V row
-    
-    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    # Pivotting
     for m in range(N):
         if A[m, m] == 0:
             
@@ -86,7 +80,6 @@ def PartialPivot(A_in, v_in):
     End of Q1a
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    # DONT TOUCH THE CODE BELOW
     for m in range(N):
         # Divide by the diagonal element
         div = A[m, m]
