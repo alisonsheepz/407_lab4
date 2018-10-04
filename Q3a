@@ -1,0 +1,48 @@
+from math import *
+import matplotlib.pyplot as pl
+import numpy as np
+#PART A
+c = 2
+x = 1.0 #this is our guess
+accuracy = 10**-6
+x_new = 1 - np.exp(-c*x)
+error = abs((x-x_new)/(1-(1/1 - np.exp(-c*x))))
+i = 0
+
+xval=[]
+
+iterations=[]
+
+while error >= accuracy: #prints the first 10 values
+    iterations.append(i)
+    x_new = 1 - np.exp(-c*x)
+    xval.append(x_new)
+    error = abs((x-x_new)/(1-(1/1 - np.exp(-c*x))))
+    x = x_new
+    i = i+1
+   
+pl.figure(1)
+pl.plot(iterations,xval,'g')
+pl.title('Convergence using Relaxation Method')
+pl.xlabel('Iteration number')
+pl.ylabel('x value')
+pl.xticks(iterations)
+pl.savefig('q3a.png')
+
+#PART B
+    
+bx = []
+bc = []
+
+for cval in np.arange(0,3.01,0.01):
+    bc.append(cval)
+    x_value = 1 - np.exp(-cval*x)
+    bx.append(x_value)
+    
+#clarify this section??? why is it not a line at zero then exp inc???   
+pl.figure(2)
+pl.plot(bc,bx,'g')
+pl.title('x values for increasing c values')
+pl.xlabel('c value')
+pl.ylabel('x value')
+pl.savefig('q3a.png') 
